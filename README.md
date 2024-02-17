@@ -19,7 +19,7 @@ https://git-scm.com/downloads
 ### 1. Introduction to Git
 
 - Overview of version control
-- Benefits of using Git
+- Benefits of using Git and Why gits
 - Basic Git concepts
 
 ### 2. Setting Up Git
@@ -27,16 +27,17 @@ https://git-scm.com/downloads
 - Configuring your Git identity
 - Initializing a new Git repository
 - Cloning an existing repository
+  ```
+  git init
+  ```
+  ```
+  git clone
+  ```
+  
 
 ### 3. Git Basics
 
-#### 3.1. Working with Branches
-
-- Creating a new branch
-- Switching between branches
-- Merging branches
-
-#### 3.2. Making Changes
+#### 3.1 Making Changes
 
 - Checking the status of your repository
 - Tracking changes with `git add`
