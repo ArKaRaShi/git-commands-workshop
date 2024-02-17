@@ -81,9 +81,11 @@ ls -la
 #### 4.3. Git add
 
 Before add let's create some new files
+
 ```
 mkdir folder_name
 ```
+
 ```
 touch main.py
 ```
@@ -130,7 +132,7 @@ git remote add origin https://github.com/your-username/your-repository.git
 This command is used to push committed changes from the local repository to the remote repository. However, before pushing, it's necessary to set up a connection to a remote repository using git remote add and specifying the URL of the remote repository.
 
 ```
-git push origin <branch>
+git push origin main
 ```
 
 Push to the specific branch
@@ -141,17 +143,94 @@ git push <remote> <branch>
 
 ### 5. Collaborating with Git
 
--   Pushing changes to a remote repository
--   Pulling changes from a remote repository
--   Resolving merge conflicts
+Let's clone git repository
 
+```
+git clone https://github.com/ArKaRaShi/git-commands-workshop.git
+```
+#### 5.1 Create a branch
+
+This command creates a new branch but does not switch to it.
+
+```
+git branch branch_name
+```
+
+To switch to the new branch, you would use.
+
+```
+git checkout branch_name
+```
+
+Alternatively, you can create and switch to a new branch in one command
+
+```
+git checkout -b branch_name
+```
+
+#### 5.2 List branches
+
+This command lists all the branches in your repository.
+
+```
+git branch
+```
+
+#### 5.3 Delete a branch
+
+This command deletes the specified branch.
+
+```
+git branch -d branch_name
+```
+
+If the branch contains changes that are not merged, you might need to force the deletion using -D.
+
+```
+git branch -D branch_name
+```
+
+#### 5.4 Merge branches
+
+To integrate changes from one branch into another, you can use the git merge command. For example, to merge a branch into the current branch
+```
+git checkout <target_branch>
+```
+```
+git merge <source_branch>
+```
+
+#### 5.5 Rebase branches
+
+Another way to integrate changes is through rebasing. It essentially moves or combines a sequence of commits to a new base commit.
+
+```
+git checkout feature_branch
+```
+```
+git rebase main_branch
+```
+
+#### 5.6 Resolve conflict
+
+During branch merging or rebasing, conflicts might arise if changes conflict with each other. Use git mergetool or manually edit the conflicting files to resolve the conflicts.
+
+```
+git mergetool
+```
+
+#### 5.7 View commit history
+
+This command shows the commit history of the current branch.
+
+```
+git log
+```
 ### 6. Git Extras
 
 -   Git log and history exploration
 -   Tagging releases
 -   Ignoring files with `.gitignore`
-
-## Getting Started
 
 ### Resources
 
