@@ -14,6 +14,7 @@ or you could use your local computer Windows
 ```
 https://git-scm.com/downloads
 ```
+
 ## Workshop Content
 
 ### 1. Introduction to Git
@@ -27,6 +28,7 @@ https://git-scm.com/downloads
 - Configuring your Git identity
 - Initializing a new Git repository
 - Cloning an existing repository
+
   ```
   git init
   ```
@@ -34,13 +36,13 @@ https://git-scm.com/downloads
   git clone
   ```
   
-
 ### 3. Git Basics
 
 #### 3.1 Making Changes
 
 - Checking the status of your repository
-- Tracking changes with `git add`
+- Tracking changes with
+    ```git add```
 - Committing changes with `git commit`
 
 ### 4. Collaborating with Git
