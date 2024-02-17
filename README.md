@@ -7,10 +7,13 @@ Welcome to the Git Commands Basics workshop! This workshop is designed to help y
 ## Prerequisites
 
 This is workshop for Linux, So before you begin, make sure you have the following installed on your linux server.
+
 ```
 apt install git
 ```
-or you could use your local computer Windows 
+
+or you could use your local computer Windows
+
 ```
 https://git-scm.com/downloads
 ```
@@ -19,34 +22,40 @@ https://git-scm.com/downloads
 
 ### 1. Introduction to Git
 
-- Overview of version control
-- Benefits of using Git and Why gits
-- Basic Git concepts
+-   Overview of version control
+-   Benefits of using Git and Why gits
+-   Basic Git concepts
 
 ### 2. Setting Up Git
 
-- Configuring your Git identity
-- Initializing a new Git repository
-- Cloning an existing repository
-- 
+-   Configuring your Git identity
+-   Initializing a new Git repository
+-   Cloning an existing repository
+-
+
 ### 3. Git Basics
 
 #### 3.1. Git init
 
 Initializes a new Git repository. If you want to place a project under revision control, this is the first command you need to learn.
 
-##### If in target foler
+- ##### If in target foler
+
 ```
 git init
 ```
 
-##### If want to create folder with git
+- ##### If want to create folder with git
 
+```
+git init folder_name
+```
 
 #### 3.2. Git status
 
-Git status:
 This command is used to check the current status of your Git repository. It shows which files are modified, which files are staged for commit, and which files are untracked. This step helps you understand the state of your repository before proceeding with further actions.
+
+you can try this command to see some 
 
 #### 3.3. Git init
 
@@ -57,6 +66,7 @@ This command is used to add all modified and new files in the current directory 
 
 Git status again:
 After adding changes to the staging area, it's a good practice to check the status again to ensure that all changes you intended to stage are properly staged and there are no untracked files left.
+
 #### 3.1. Start with Git init
 
 Git commit -m "Initial commit":
@@ -79,20 +89,20 @@ This command pushes committed changes from the local "main" branch to the remote
 
 ### 4. Collaborating with Git
 
-- Pushing changes to a remote repository
-- Pulling changes from a remote repository
-- Resolving merge conflicts
+-   Pushing changes to a remote repository
+-   Pulling changes from a remote repository
+-   Resolving merge conflicts
 
 ### 5. Git Extras
 
-- Git log and history exploration
-- Tagging releases
-- Ignoring files with `.gitignore`
+-   Git log and history exploration
+-   Tagging releases
+-   Ignoring files with `.gitignore`
 
 ## Getting Started
 
 ### Resources
 
-- [Git Documentation](https://git-scm.com/doc)
-- [GitHub Guides](https://guides.github.com/)
-- [Pro Git Book](https://git-scm.com/book/en/v2)
+-   [Git Documentation](https://git-scm.com/doc)
+-   [GitHub Guides](https://guides.github.com/)
+-   [Pro Git Book](https://git-scm.com/book/en/v2)
