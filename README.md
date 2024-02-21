@@ -8,11 +8,10 @@ Table of Contents
 
 1. [Install](#install)
 1. [Setup](#setup)
-2. [Basic Commands](#basic-commands)
+2. [Create Git Repository](#create-git-repo)
 3. [Branching](#branching)
 4. [Merging](#merging)
-5. [Remote Repositories](#remote-repositories)
-6. [Undoing Changes](#undoing-changes)
+5. [Undoing Changes](#undoing-changes)
 
 Install <a name="install"></a>
 -------
@@ -31,23 +30,35 @@ Setup <a name="setup"></a>
 	```bash
 	ssh-keygen -o -t rsa -C "gmail"
 	```
+
+	<!-- insert a picture for put key -->
+
 so now git host know you
 
-<!-- Basic Commands <a name="basic-commands"></a>
--------------- -->
-Create Git Repository <a name="basic-commands"></a>
+Create Git Repository <a name="create-git-repo"></a>
 --------------
-1. if you had directory, you 
+1. First make repo on git host, in this case we use github
 
+	<!-- maybe insert a picture -->
+
+2. if you had directory
+	
+	```bash
+	git init <your directory>
+	```
+	```bash
+	git remote origin add <url>
+	```
+	if you don't have yet, you can git clone from repo on github
+	```bash
+	git clone <url> <diretory name>
+	```
 
 Branching <a name="branching"></a>
 ---------
 
 Merging <a name="merging"></a>
 -------
-
-Remote Repositories <a name="remote-repositories"></a>
--------------------
 
 Undoing Changes <a name="undoing-changes"></a>
 ---------------
