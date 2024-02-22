@@ -17,6 +17,7 @@ Table of Contents
 9. [Rebasing](#rebase)
 10. [Undoing Changes](#undoing-changes)
 11. [Synchronizing](#sync)
+12. [Resources](#resources)
 
 Install <a name="install"></a>
 -------
@@ -291,3 +292,11 @@ This section try to explain synchronizing local repo with remote repo.
 
 > [!NOTE]
 > *By default `git push` upload from current branch*
+
+Resources <a name="resources"></a>
+---------
+
+Leraning more : [learngitbranching](https://learngitbranching.js.org/)
+
+Picture :
+[What is Git: Features, Command and How to Use it?](https://intellipaat.com/blog/what-is-git/)
