@@ -89,11 +89,8 @@ Branching <a name="branching"></a>
 	```sh
 	git checkout <branch_name>
 	```
-TRICK : you can use below command for create + switch
-	
-	```sh
-	git checkout -b <branch_name>
-	```
+	**TRICK : use "git checkout -f <branch_name>" for create + switch**
+
 Merging <a name="merging"></a>
 -------
 - Merge your current branch with another branch
@@ -127,7 +124,7 @@ This section try to explain synchronizing local repo with remote repo
 	```sh
 	git remote add <alias> <git_url>
 	```
-	*** Default alias is "origin" ***
+	**Default alias is "origin"**
 - View all remote connections
 	```sh
 	git remote -v
@@ -144,7 +141,7 @@ This section try to explain synchronizing local repo with remote repo
 	```sh
 	git fetch <alias> <branch>
 	```
-	*** Use only "git fecth" fetch from all branch ***
+	**Use only "git fecth" fetch from all branch**
 - Fetch + merge from current branch use
 	```sh
 	git pull
@@ -157,4 +154,4 @@ This section try to explain synchronizing local repo with remote repo
 	```sh
 	git push <alias> <branch>
 	```
-	*** Use only "git push" upload from current branch ***
+	**Use only "git push" upload from current branch**
