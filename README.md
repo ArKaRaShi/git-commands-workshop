@@ -117,7 +117,7 @@ Make a Change <a name="makechange"></a>
 	```
 
 > [!TIP]
-> use "." for add all your current files
+> **use "." for add all your current files**
 
 - Commit staged files:
 
@@ -181,7 +181,7 @@ Branching <a name="branching"></a>
 	```
 
 > [!TIP]
-> use "git checkout -f <branch_name>" for create + switch
+> **use "git checkout -f <branch_name>" for create + switch**
 
 Merging <a name="merging"></a>
 -------
@@ -238,7 +238,7 @@ This section try to explain synchronizing local repo with remote repo.
 	```sh
 	git remote add <alias> <git_url>
 	```
-
+	> [!NOTE]
 	> *By default alias is "origin"*
 
 - View all remote connections:
@@ -264,8 +264,9 @@ This section try to explain synchronizing local repo with remote repo.
 	```sh
 	git fetch <alias> <branch>
 	```
-
-	> By default use ```git fecth``` to fetch from all branch
+	
+	> [!NOTE]
+	> *By default use `git fecth` to fetch from all branch*
 
 - Fetch + merge from the current branch:
 
@@ -285,4 +286,5 @@ This section try to explain synchronizing local repo with remote repo.
 	git push <alias> <branch>
 	```
 
-	> By default "git push" upload from current branch
+	> [!NOTE]
+	> *By default `git push` upload from current branch*
