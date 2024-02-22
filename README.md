@@ -3,19 +3,21 @@ Git Commands Cheat Sheet
 
 This README provides a quick reference for commonly used Git commands. GOOD LUCK!!!
 
+![]()
+
 Table of Contents
 -----------------
 
 1. [Install](#install)
 2. [Setup](#setup)
 3. [Basic Concepts](#basicconepts)
-5. [Create Git Repository](#create-git-repo)
-6. [Make a Change](#makechange)
-7. [Branching](#branching)
-8. [Merging](#merging)
-9. [Rebasing](#rebase)
-10. [Undoing Changes](#undoing-changes)
-11. [Synchronizing](#sync)
+4. [Create Git Repository](#create-git-repo)
+5. [Make & Show a Change](#makechange)
+6. [Branching](#branching)
+7. [Merging](#merging)
+8. [Rebasing](#rebase)
+9. [Undoing Changes](#undoing-changes)
+10. [Synchronizing](#sync)
 
 Install <a name="install"></a>
 -------
@@ -50,7 +52,7 @@ Setup <a name="setup"></a>
 
 - Copy public key and pase in github.
 	
-	Open github -> Click profile github at top right -> **Settings** -> **SSH and GPG keys** -> **New SSH Key** -> Add **"Title"** box and paste public key in **"Key"** box -> **Add SSH key**
+	Open github -> Click profile github at top right -> `Settings` -> `SSH and GPG keys` -> `New SSH Key` -> Add **"Title"** box and paste public key in **"Key"** box -> `Add SSH key`
 	<!-- insert a picture for put key -->
 
 Basic Concepts <a name="basicconecpts"></a>
@@ -71,7 +73,7 @@ Create Git Repository <a name="create-git-repo"></a>
 
 - First make repo on githost, in this case we use github.
 
-	Open github -> Click profile github at top right -> **New** -> Add name of repo in **"Repository name"** box -> **Create repository**
+	Open github -> Click **profile github at top right** -> `New` -> Add name of repo in **"Repository name"** box -> `Create repository`
 	<!-- maybe insert a picture -->
 
 - If you had local repo
@@ -88,19 +90,39 @@ Create Git Repository <a name="create-git-repo"></a>
 
 Make a Change <a name="makechange"></a>
 -------------
-
+### Make
 - Add files to stage
 
 	```sh
 	git add <file>
 	```
 
-	**use "." for add all your current files**
+	**TRICK : use "." for add all your current files**
 
 - Commit all staged files to git repo
 
 	```sh
 	git commit -m <"recommend comment about your change">
+	```
+
+### Show
+
+- Shows the commit history of the current branch
+
+	```sh
+	git log
+	```
+
+- Shows the status of your local repository
+
+	```sh
+	git status
+	```
+
+- Shows the commit as human readable of the current branch
+
+	```sh
+	git show <commit_hash>
 	```
 
 Branching <a name="branching"></a>
@@ -120,10 +142,10 @@ Branching <a name="branching"></a>
 
 	*flags : -a = all branch, -r = remote branch, -v = local branch*
 
-- Move branch1 to branch2's point
+-  Changes the reference of ```<branch1>``` to point to the same commit as ```<branch2>```
 
 	```sh
-	git branch -f branch1 branch2
+	git branch -f <branch1> <branch2>
 	```
 
 - Delete a branch
@@ -152,11 +174,16 @@ Merging <a name="merging"></a>
 Rebasing <a name="rebase"></a>
 --------
 
-- "git rebase" gives the branch2 connect with branch1,
-given branch1 is base
+- Moves the commits unique to the current branch on top of ```<branch1>```
 
 	```sh
-	git rebase <branch1> <branch2>
+	git rebase <branch1>
+	```
+
+- Moves the commits unique of ```<branch1>``` to the ```<branch2>```
+
+	```sh
+	git rebase <branch1> <branch>
 	```
 
 Undoing Changes <a name="undoing-changes"></a>
@@ -172,6 +199,12 @@ Undoing Changes <a name="undoing-changes"></a>
 
 	```sh
 	git reset <commit_hash>
+	```
+
+- Restore working directory files to its state at the last commit
+
+	```sh
+	git restore .
 	```
 
 Synchronizing <a name="sync"></a>
@@ -211,7 +244,7 @@ This section try to explain synchronizing local repo with remote repo.
 	git fetch <alias> <branch>
 	```
 
-	**By default "git fecth" fetch from all branch**
+	**By default use ```git fecth``` to fetch from all branch**
 
 - Fetch + merge from current branch use
 
