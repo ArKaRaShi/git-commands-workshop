@@ -51,14 +51,14 @@ Setup <a name="setup"></a>
 
 - Adding SSH Key on GitHub:
 
-	1. **Open GitHub**.
-	2. Click on your **profile icon** at the top right corner.
-	3. Select **"Settings"**.
-	4. Choose **"SSH and GPG keys"** from the sidebar.
-	5. Click on **"New SSH Key"**.
-	6. Add a descriptive title in the **"Title"** box.
-	7. Paste your public key in the **"Key"** box.
-	8. Click **"Add SSH key"** to save.
+1. **Open GitHub**.
+2. Click on your **profile icon** at the top right corner.
+3. Select **"Settings"**.
+4. Choose **"SSH and GPG keys"** from the sidebar.
+5. Click on **"New SSH Key"**.
+6. Add a descriptive title in the **"Title"** box.
+7. Paste your public key in the **"Key"** box.
+8. Click **"Add SSH key"** to save.
 
 <!-- insert a picture for put key -->
 
@@ -79,7 +79,7 @@ This section explains important words in Git:
 Understanding Git Structure <a name="git-structure"></a>
 ---------------------------
 
-![Structure Of Git](../assets/StructureOfGit)
+![Structure Of Git](/assets/StructureOfGit.webp)
 
 Create Git Repository <a name="create-git-repo"></a>
 --------------
