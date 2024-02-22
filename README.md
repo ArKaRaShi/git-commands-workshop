@@ -65,7 +65,7 @@ Setup <a name="setup"></a>
 Basic Concepts <a name="basicconecpts"></a>
 --------------
 
-This section will explain about important words in git
+This section explains important words in Git:
 
 - **main**		is default branch
 - **origin**	is default alias on upstream repo
@@ -74,10 +74,12 @@ This section will explain about important words in git
 - **HEAD~2**	is grandparent of **HEAD**
 
 > [!TIP]
-> **Can change "HEAD" and "number" to branch and number what you want**
+> **Can change `HEAD` and `number` to branch and number what you want**
 
 Understanding Git Structure <a name="git-structure"></a>
 ---------------------------
+
+![Structure Of Git](../assets/StructureOfGit)
 
 Create Git Repository <a name="create-git-repo"></a>
 --------------
@@ -117,7 +119,7 @@ Make a Change <a name="makechange"></a>
 	```
 
 > [!TIP]
-> **use "." for add all your current files**
+> **use `.` for add all your current files**
 
 - Commit staged files:
 
@@ -181,7 +183,7 @@ Branching <a name="branching"></a>
 	```
 
 > [!TIP]
-> **use "git checkout -f <branch_name>" for create + switch**
+> **use `git checkout -f <branch_name>` for create + switch**
 
 Merging <a name="merging"></a>
 -------
