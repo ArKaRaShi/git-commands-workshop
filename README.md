@@ -238,8 +238,9 @@ This section try to explain synchronizing local repo with remote repo.
 	```sh
 	git remote add <alias> <git_url>
 	```
-	> [!NOTE]
-	> *By default alias is "origin"*
+
+> [!NOTE]
+> *By default alias is "origin"*
 
 - View all remote connections:
 
@@ -265,8 +266,8 @@ This section try to explain synchronizing local repo with remote repo.
 	git fetch <alias> <branch>
 	```
 	
-	> [!NOTE]
-	> *By default use `git fecth` to fetch from all branch*
+> [!NOTE]
+> *By default use `git fecth` to fetch from all branch*
 
 - Fetch + merge from the current branch:
 
@@ -286,5 +287,5 @@ This section try to explain synchronizing local repo with remote repo.
 	git push <alias> <branch>
 	```
 
-	> [!NOTE]
-	> *By default `git push` upload from current branch*
+> [!NOTE]
+> *By default `git push` upload from current branch*
