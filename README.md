@@ -66,8 +66,8 @@ This section will explain about important words in git
 - **HEAD^**		is parant of **HEAD**
 - **HEAD~2**	is grandparent of **HEAD**
 
-[!TIP]
-Can change "HEAD" and "number" to branch and number what you want
+> [!TIP]
+> Can change "HEAD" and "number" to branch and number what you want
 
 Create Git Repository <a name="create-git-repo"></a>
 --------------
