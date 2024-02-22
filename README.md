@@ -22,18 +22,20 @@ Install <a name="install"></a>
 Setup <a name="setup"></a>
 -----
 #### git config
-- you need to config git local so that githost knows you
+- You need to config git local so that githost knows you
 	```sh
 	git config --global user.email <"gmail">
 	```
 	```sh
 	git config --global user.name <"git username">
 	```
-- if you use Linux/Mac, you need to use
+- If you use Linux/Mac, you need to use
 	```sh
 	ssh-keygen -o -t rsa -C <"gmail">
 	```
-
+- Copy public key and pase in github
+	
+	Open github -> Click profile github -> Settings -> SSH and GPG keys -> New SSH Key -> Add "Title" box and paste public key in "Key" box -> Add SSH key
 	<!-- insert a picture for put key -->
 
 Create Git Repository <a name="create-git-repo"></a>
@@ -54,13 +56,12 @@ Create Git Repository <a name="create-git-repo"></a>
 
 Make a Change <a name="makechange"></a>
 -------------
-
+- Add files to stage
 	```sh
 	git add <file>
 	```
-	
-	use "." for add all your current files
-	
+	**use "." for add all your current files**
+- Commit all staged files to git repo
 	```sh
 	git commit -m <"recommend comment about your change">
 	```
@@ -76,8 +77,8 @@ Branching <a name="branching"></a>
 	```sh
 	git branch <flags>
 	```
-	-a = all branch, -r = remote branch, -v = local branch
-- Move branch1 to branch2's commit
+	flags : -a = all branch, -r = remote branch, -v = local branch
+- Move branch1 to branch2's point
 	```sh
 	git branch -f branch1 branch2
 	```
