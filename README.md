@@ -3,21 +3,20 @@ Git Commands Cheat Sheet
 
 This README provides a quick reference for commonly used Git commands. GOOD LUCK!!!
 
-![]()
-
 Table of Contents
 -----------------
 
 1. [Install](#install)
 2. [Setup](#setup)
 3. [Basic Concepts](#basicconepts)
-4. [Create Git Repository](#create-git-repo)
-5. [Make & Show a Change](#makechange)
-6. [Branching](#branching)
-7. [Merging](#merging)
-8. [Rebasing](#rebase)
-9. [Undoing Changes](#undoing-changes)
-10. [Synchronizing](#sync)
+4. [Understanding Git Structure](#git-structure)
+5. [Create Git Repository](#create-git-repo)
+6. [Make & Show a Change](#makechange)
+7. [Branching](#branching)
+8. [Merging](#merging)
+9. [Rebasing](#rebase)
+10. [Undoing Changes](#undoing-changes)
+11. [Synchronizing](#sync)
 
 Install <a name="install"></a>
 -------
@@ -50,10 +49,18 @@ Setup <a name="setup"></a>
 	ssh-keygen -o -t rsa -C <"gmail">
 	```
 
-- Copy public key and pase in github.
-	
-	Open github -> Click profile github at top right -> `Settings` -> `SSH and GPG keys` -> `New SSH Key` -> Add **"Title"** box and paste public key in **"Key"** box -> `Add SSH key`
-	<!-- insert a picture for put key -->
+- Adding SSH Key on GitHub:
+
+	1. **Open GitHub**.
+	2. Click on your **profile icon** at the top right corner.
+	3. Select **"Settings"**.
+	4. Choose **"SSH and GPG keys"** from the sidebar.
+	5. Click on **"New SSH Key"**.
+	6. Add a descriptive title in the **"Title"** box.
+	7. Paste your public key in the **"Key"** box.
+	8. Click **"Add SSH key"** to save.
+
+<!-- insert a picture for put key -->
 
 Basic Concepts <a name="basicconecpts"></a>
 --------------
@@ -69,13 +76,23 @@ This section will explain about important words in git
 > [!TIP]
 > **Can change "HEAD" and "number" to branch and number what you want**
 
+Understanding Git Structure <a name="git-structure"></a>
+---------------------------
+
 Create Git Repository <a name="create-git-repo"></a>
 --------------
 
-- First make repo on githost, in this case we use github.
+### Creating a New Repository on GitHub:
+	
+1. **Open GitHub**.
+2. Click on your **profile icon** at the top right corner.
+3. Select **"New"**.
+4. In the **"Repository name"** box, add the desired name for your repository.
+5. Click on **"Create repository"**.
 
-	Open github -> Click **profile github at top right** -> `New` -> Add name of repo in **"Repository name"** box -> `Create repository`
 	<!-- maybe insert a picture -->
+
+### Creating a New Repository on Your Computer:
 
 - If you had local repo
 	
@@ -91,36 +108,38 @@ Create Git Repository <a name="create-git-repo"></a>
 
 Make a Change <a name="makechange"></a>
 -------------
-### Make
-- Add files to stage
+### Making Changes:
+
+- Add files to stage:
 
 	```sh
 	git add <file>
 	```
 
-	**TRICK : use "." for add all your current files**
+> [!TIP]
+> use "." for add all your current files
 
-- Commit all staged files to git repo
+- Commit staged files:
 
 	```sh
 	git commit -m <"recommend comment about your change">
 	```
 
-### Show
+### Showing Changes:
 
-- Shows the commit history of the current branch
+- Shows the commit history of the current branch:
 
 	```sh
 	git log
 	```
 
-- Shows the status of your local repository
+- Shows the status of your local repository:
 
 	```sh
 	git status
 	```
 
-- Shows the commit as human readable of the current branch
+- Shows the commit as human readable of the current branch:
 
 	```sh
 	git show <commit_hash>
@@ -129,13 +148,13 @@ Make a Change <a name="makechange"></a>
 Branching <a name="branching"></a>
 ---------
 
-- Create branch
+- Create a new branch:
 
 	```sh
 	git branch <branch_name>
 	```
 
-- Show branch
+- List branches:
 
 	```sh
 	git branch <flags>
@@ -143,30 +162,31 @@ Branching <a name="branching"></a>
 
 	*flags : -a = all branch, -r = remote branch, -v = local branch*
 
--  Changes the reference of ```<branch1>``` to point to the same commit as ```<branch2>```
+-  Move branch pointer, `<branch1>` to `<branch2>`:
 
 	```sh
 	git branch -f <branch1> <branch2>
 	```
 
-- Delete a branch
+- Delete a branch:
 
 	```sh
 	git branch -d <branch_name>
 	```
 
-- Switch to anoter branch
+- Switch to anoter branch:
 
 	```sh
 	git checkout <branch_name>
 	```
 
-	**TRICK : use "git checkout -f <branch_name>" for create + switch**
+> [!TIP]
+> use "git checkout -f <branch_name>" for create + switch
 
 Merging <a name="merging"></a>
 -------
 
-- Merge your current branch with another branch
+- Merge branch into current branch:
 
 	```sh
 	git merge <another_branch>
@@ -175,34 +195,34 @@ Merging <a name="merging"></a>
 Rebasing <a name="rebase"></a>
 --------
 
-- Moves the commits unique to the current branch on top of ```<branch1>```
+- Rebase `current branch` onto `<branch1>`:
 
 	```sh
 	git rebase <branch1>
 	```
 
-- Moves the commits unique of ```<branch1>``` to the ```<branch2>```
+- Rebase `<branch2>` onto `<branch1>`:
 
 	```sh
-	git rebase <branch1> <branch>
+	git rebase <branch1> <branch2>
 	```
 
 Undoing Changes <a name="undoing-changes"></a>
 ---------------
 
-- Create a new commit that reverses of a previous commit.
+- Create a new commit to revert a previous commit:
 
 	```sh
 	git revert <commmit_hash>
 	```
 
-- Move your branch to previous commit
+- Move current branch pointer to a `<commit_hash>`:
 
 	```sh
 	git reset <commit_hash>
 	```
 
-- Restore working directory files to its state at the last commit
+- Restore working directory to the last commit:
 
 	```sh
 	git restore .
@@ -213,56 +233,56 @@ Synchronizing <a name="sync"></a>
 
 This section try to explain synchronizing local repo with remote repo.
 
-- Add remote repo
+- Add a remote repository:
 
 	```sh
 	git remote add <alias> <git_url>
 	```
 
-	**By default alias is "origin"**
+	> *By default alias is "origin"*
 
-- View all remote connections
+- View all remote connections:
 
 	```sh
 	git remote -v
 	```
 
-- Remove connection
+- Remove a remote connection:
 
 	```sh
 	git remote remove <alias>
 	```
 
-- Rename the alias
+- Rename a remote alias:
 
 	```sh
 	git remote rename <old_name> <new_name>
 	```
 
-- Fetch only branch from remote repo (not merge)
+- Fetch only specific branch from remote repo (not merge):
 
 	```sh
 	git fetch <alias> <branch>
 	```
 
-	**By default use ```git fecth``` to fetch from all branch**
+	> By default use ```git fecth``` to fetch from all branch
 
-- Fetch + merge from current branch use
+- Fetch + merge from the current branch:
 
 	```sh
 	git pull
 	```
 
-- Fetch + rebase from current branch use
+- Fetch + rebase from current branch:
 
 	```sh
 	git pull --rebase
 	```
 
-- Upload local repo from branch to remote repo
+- Upload local changes from `<branch>` to a remote repository:
 
 	```sh
 	git push <alias> <branch>
 	```
 
-	**By default "git push" upload from current branch**
+	> By default "git push" upload from current branch
