@@ -118,7 +118,7 @@ Branching <a name="branching"></a>
 	git branch <flags>
 	```
 
-		*flags : -a = all branch, -r = remote branch, -v = local branch*
+	*flags : -a = all branch, -r = remote branch, -v = local branch*
 
 - Move branch1 to branch2's point
 
