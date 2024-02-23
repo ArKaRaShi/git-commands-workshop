@@ -80,7 +80,7 @@ This section explains important words in Git:
 Understanding Git Structure <a name="git-structure"></a>
 ---------------------------
 
-![Structure Of Git](/assets/StructureOfGit.webp)
+![Structure Of Git](./assets/StructureOfGit.webp)
 
 Create Git Repository <a name="create-git-repo"></a>
 --------------
