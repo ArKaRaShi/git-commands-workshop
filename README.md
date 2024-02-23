@@ -52,13 +52,13 @@ https://github.com/new
 
 Initializes a new Git repository. If you want to place a project under revision control, this is the first command you need to learn.
 
-##### If in target folder
+If in target folder
 
 ```
 git init
 ```
 
-##### If want to create folder with git
+If want to create folder with git
 
 ```
 git init folder_name
@@ -134,6 +134,7 @@ So you need to config git local so that githost knows you.
 ```sh
 git config --global user.email <"gmail">
 ```
+
 ```sh
 git config --global user.name <"git username">
 ```
@@ -144,8 +145,9 @@ Then try to commit again.
 The repository you created in github is call remote repository. The git remote command is one piece of the broader system which is responsible for syncing changes. So we can use git fetch, git push, and git pull commands.
 
 Let's try.
+
 ```sh
-git remote add origin <"Your repository link">
+git remote add origin <"your repository link">
 ```
 
 #### 4.6. Git push
