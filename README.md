@@ -140,6 +140,14 @@ git config --global user.name <"git username">
 
 Then try to commit again.
 
+#### 4.6. Git remote
+The repository you created in github is call remote repository. The git remote command is one piece of the broader system which is responsible for syncing changes. Records registered through the git remote command are used in conjunction with the git fetch, git push, and git pull commands.
+
+Let's try.
+```sh
+git remote add origin <"Your repository link">
+```
+
 #### 4.6. Git push
 The git push command is used to upload **local repository** content to a **remote repository**.
 Let's try this command.
