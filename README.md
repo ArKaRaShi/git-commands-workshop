@@ -131,12 +131,12 @@ git commit -m "Initial commit"
 Git will tell you to set config, include email and name.
 So you need to config git local so that githost knows you.
 
-```sh
-git config --global user.email <"gmail">
+```
+git config --global user.email <gmail>
 ```
 
-```sh
-git config --global user.name <"git username">
+```
+git config --global user.name <git username>
 ```
 
 Then try to commit again.
