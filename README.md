@@ -48,23 +48,26 @@ https://github.com/new
 
 ### 4. Git Basics
 
-#### 4.1. Git init
+#### 4.1. Git config
+git config --global user.email <email>
+git config --global user.name <gitusername>
+
+#### 4.2. Git init
 
 Initializes a new Git repository. If you want to place a project under revision control, this is the first command you need to learn.
 
--   ##### If in target folder
-
+   ##### If in target folder
 ```
 git init
 ```
 
--   ##### If want to create folder with git
+   ##### If want to create folder with git
 
 ```
 git init folder_name
 ```
 
-#### 4.2. Git status
+#### 4.3. Git status
 
 This command is used to check the current status of your Git repository. It shows which files are modified, which files are staged for commit, and which files are untracked. This step helps you understand the state of your repository before proceeding with further actions.
 
@@ -78,12 +81,14 @@ you can try this command to see some hidden folders for (mac user or linux).
 ls -la
 ```
 
-#### 4.3. Git add
+#### 4.4. Git add
 
 Before add let's create some new files
+
 ```
 mkdir folder_name
 ```
+
 ```
 touch main.py
 ```
@@ -103,7 +108,7 @@ Add Specific files.
 git add file1.txt file2.txt
 ```
 
-#### 4.4. Git status again
+#### 4.5. Git status again
 
 After adding changes to the staging area, it's a good practice to check the status again to ensure that all changes you intended to stage are properly staged and there are no untracked files left.
 
@@ -111,7 +116,7 @@ After adding changes to the staging area, it's a good practice to check the stat
 git status
 ```
 
-#### 4.5. Git commit
+#### 4.6. Git commit
 
 This command commits the staged changes to the **local repository** along with a descriptive message "Initial commit". The -m flag is used to include a commit message directly from the command line.
 
@@ -119,18 +124,21 @@ This command commits the staged changes to the **local repository** along with a
 git commit -m "Initial commit"
 ```
 
-#### 4.6. Git remote
+#### 4.7. Git remote
 
 ```
 git remote add origin https://github.com/your-username/your-repository.git
 ```
 
-#### 4.7. Git push
+#### 4.8. Git Token
+
+
+#### 4.10. Git push
 
 This command is used to push committed changes from the local repository to the remote repository. However, before pushing, it's necessary to set up a connection to a remote repository using git remote add and specifying the URL of the remote repository.
 
 ```
-git push origin <branch>
+git push origin main
 ```
 
 Push to the specific branch
@@ -141,20 +149,98 @@ git push <remote> <branch>
 
 ### 5. Collaborating with Git
 
--   Pushing changes to a remote repository
--   Pulling changes from a remote repository
--   Resolving merge conflicts
+Let's clone git repository
 
+```
+git clone https://github.com/ArKaRaShi/git-commands-workshop.git
+```
+#### 5.1 Create a branch
+
+This command creates a new branch but does not switch to it.
+
+```
+git branch branch_name
+```
+
+To switch to the new branch, you would use.
+
+```
+git checkout branch_name
+```
+
+Alternatively, you can create and switch to a new branch in one command
+
+```
+git checkout -b branch_name
+```
+
+#### 5.2 List branches
+
+This command lists all the branches in your repository.
+
+```
+git branch
+```
+
+#### 5.3 Delete a branch
+
+This command deletes the specified branch.
+
+```
+git branch -d branch_name
+```
+
+If the branch contains changes that are not merged, you might need to force the deletion using -D.
+
+```
+git branch -D branch_name
+```
+
+#### 5.4 Merge branches
+
+To integrate changes from one branch into another, you can use the git merge command. For example, to merge a branch into the current branch
+```
+git checkout <target_branch>
+```
+```
+git merge <source_branch>
+```
+
+#### 5.5 Rebase branches
+
+Another way to integrate changes is through rebasing. It essentially moves or combines a sequence of commits to a new base commit.
+
+```
+git checkout feature_branch
+```
+```
+git rebase main_branch
+```
+
+#### 5.6 Resolve conflict
+
+During branch merging or rebasing, conflicts might arise if changes conflict with each other. Use git mergetool or manually edit the conflicting files to resolve the conflicts.
+
+```
+git mergetool
+```
+
+#### 5.7 View commit history
+
+This command shows the commit history of the current branch.
+
+```
+git log
+```
 ### 6. Git Extras
 
 -   Git log and history exploration
 -   Tagging releases
 -   Ignoring files with `.gitignore`
 
-## Getting Started
-
 ### Resources
 
 -   [Git Documentation](https://git-scm.com/doc)
 -   [GitHub Guides](https://guides.github.com/)
 -   [Pro Git Book](https://git-scm.com/book/en/v2)
+-   [Git Vitalization For Better Understanding](https://learngitbranching.js.org/)
