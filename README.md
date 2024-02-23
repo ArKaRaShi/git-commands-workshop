@@ -146,8 +146,8 @@ The repository you created in github is call remote repository. The git remote c
 
 Let's try.
 
-```sh
-git remote add origin <"your repository link">
+```
+git remote add origin <git@github.com:<username>/<repository>.git>
 ```
 
 #### 4.6. Git push
@@ -157,8 +157,8 @@ Let's try this command.
 ```
 git push origin main
 ```
-
-If you use Linux/Mac, you need to use.
+You will see an error.
+So if you use Linux/Mac, You need a key to authenticate. Let's use this command to generate both private and public key.
 
 ```sh
 ssh-keygen -o -t rsa -C <"gmail">
