@@ -1,246 +1,234 @@
-# Git Commands
+Git Commands Cheat Sheet
+========================
 
-## Overview
+This README provides a quick reference for commonly used Git commands. GOOD LUCK!!!
 
-Welcome to the Git Commands Basics workshop! This workshop is designed to help you get started with the fundamentals of Git, a distributed version control system. Whether you are new to Git or looking to refresh your knowledge, this workshop will guide you through essential Git commands and workflows.
+Table of Contents
+-----------------
 
-## Prerequisites
+1. [Install](#install)
+2. [Setup](#setup)
+3. [Basic Concepts](#basicconepts)
+5. [Create Git Repository](#create-git-repo)
+6. [Make a Change](#makechange)
+7. [Branching](#branching)
+8. [Merging](#merging)
+9. [Rebasing](#rebase)
+10. [Undoing Changes](#undoing-changes)
+11. [Synchronizing](#sync)
 
-This is workshop for Linux, So before you begin, make sure you have the following installed on your linux server.
+Install <a name="install"></a>
+-------
 
-```
-apt install git
-```
+- For Linux
 
-or you could use your local computer Windows
+	```sh
+	sudo apt install git
+	```
 
-```
-https://git-scm.com/downloads
-```
+- For macOS/Window can read from this link, sorry, we are lazy.
 
-## Workshop Content
+	[https://git-scm.com/downloads](https://git-scm.com/downloads)
 
-### 1. Introduction to Git
+Setup <a name="setup"></a>
+-----
 
--   Overview of version control
--   Benefits of using Git and Why gits
--   Basic Git concepts
+- You need to config git local so that githost knows you.
 
-### 2. Setting Up Git
+	```sh
+	git config --global user.email <"gmail">
+	```
+	```sh
+	git config --global user.name <"git username">
+	```
 
--   Configuring your Git identity
--   Initializing a new Git repository
--   Cloning an existing repository
+- If you use Linux/Mac, you need to use.
 
-### 3. Github
+	```sh
+	ssh-keygen -o -t rsa -C <"gmail">
+	```
 
-#### Create account
+- Copy public key and pase in github.
+	
+	Open github -> Click profile github at top right -> **Settings** -> **SSH and GPG keys** -> **New SSH Key** -> Add **"Title"** box and paste public key in **"Key"** box -> **Add SSH key**
+	<!-- insert a picture for put key -->
 
-```
-https://github.com/
-```
+Basic Concepts <a name="basicconecpts"></a>
+--------------
 
-#### Create repository
+This section will explain about important words in git
 
-```
-https://github.com/new
-```
+- **main** is default branch
+- **origin** is default alias on upstream repo
+- **HEAD** is current branch
+- **HEAD^** is parant of **HEAD**
+- **HEAD~2** is grandparent of **HEAD**
 
-### 4. Git Basics
+**TRICK : Can change "HEAD" and number to branch and number what you want**
 
-#### 4.1. Git config
-git config --global user.email <email>
-git config --global user.name <gitusername>
+Create Git Repository <a name="create-git-repo"></a>
+--------------
 
-#### 4.2. Git init
+- First make repo on githost, in this case we use github.
 
-Initializes a new Git repository. If you want to place a project under revision control, this is the first command you need to learn.
+	Open github -> Click profile github at top right -> **New** -> Add name of repo in **"Repository name"** box -> **Create repository**
+	<!-- maybe insert a picture -->
 
-   ##### If in target folder
-```
-git init
-```
+- If you had local repo
+	
+	```sh
+	git init <your directory>
+	```
 
-   ##### If want to create folder with git
+- If you had remote repo
 
-```
-git init folder_name
-```
+	```sh
+	git clone <url> <diretory name>
+	```
 
-#### 4.3. Git status
+Make a Change <a name="makechange"></a>
+-------------
 
-This command is used to check the current status of your Git repository. It shows which files are modified, which files are staged for commit, and which files are untracked. This step helps you understand the state of your repository before proceeding with further actions.
+- Add files to stage
 
-```
-git status
-```
+	```sh
+	git add <file>
+	```
 
-you can try this command to see some hidden folders for (mac user or linux).
+	**use "." for add all your current files**
 
-```
-ls -la
-```
+- Commit all staged files to git repo
 
-#### 4.4. Git add
+	```sh
+	git commit -m <"recommend comment about your change">
+	```
 
-Before add let's create some new files
+Branching <a name="branching"></a>
+---------
 
-```
-mkdir folder_name
-```
+- Create branch
 
-```
-touch main.py
-```
+	```sh
+	git branch <branch_name>
+	```
 
-This command is used to add all modified and new files in the current directory to the staging area.
-The dot . represents the current directory. By using git add ., you're staging all changes in the current directory for the next commit.
+- Show branch
 
-Add all changed files.
+	```sh
+	git branch <flags>
+	```
 
-```
-git add .
-```
+	*flags : -a = all branch, -r = remote branch, -v = local branch*
 
-Add Specific files.
+- Move branch1 to branch2's point
 
-```
-git add file1.txt file2.txt
-```
+	```sh
+	git branch -f branch1 branch2
+	```
 
-#### 4.5. Git status again
+- Delete a branch
 
-After adding changes to the staging area, it's a good practice to check the status again to ensure that all changes you intended to stage are properly staged and there are no untracked files left.
+	```sh
+	git branch -d <branch_name>
+	```
 
-```
-git status
-```
+- Switch to anoter branch
 
-#### 4.6. Git commit
+	```sh
+	git checkout <branch_name>
+	```
 
-This command commits the staged changes to the **local repository** along with a descriptive message "Initial commit". The -m flag is used to include a commit message directly from the command line.
+	**TRICK : use "git checkout -f <branch_name>" for create + switch**
 
-```
-git commit -m "Initial commit"
-```
+Merging <a name="merging"></a>
+-------
 
-#### 4.7. Git remote
+- Merge your current branch with another branch
 
-```
-git remote add origin https://github.com/your-username/your-repository.git
-```
+	```sh
+	git merge <another_branch>
+	```
 
-#### 4.8. Git Token
+Rebasing <a name="rebase"></a>
+--------
 
+- "git rebase" gives the branch2 connect with branch1,
+given branch1 is base
 
-#### 4.10. Git push
+	```sh
+	git rebase <branch1> <branch2>
+	```
 
-This command is used to push committed changes from the local repository to the remote repository. However, before pushing, it's necessary to set up a connection to a remote repository using git remote add and specifying the URL of the remote repository.
+Undoing Changes <a name="undoing-changes"></a>
+---------------
 
-```
-git push origin main
-```
+- Create a new commit that reverses of a previous commit.
 
-Push to the specific branch
+	```sh
+	git revert <commmit_hash>
+	```
 
-```
-git push <remote> <branch>
-```
+- Move your branch to previous commit
 
-### 5. Collaborating with Git
+	```sh
+	git reset <commit_hash>
+	```
 
-Let's clone git repository
+Synchronizing <a name="sync"></a>
+-------------
 
-```
-git clone https://github.com/ArKaRaShi/git-commands-workshop.git
-```
-#### 5.1 Create a branch
+This section try to explain synchronizing local repo with remote repo.
 
-This command creates a new branch but does not switch to it.
+- Add remote repo
 
-```
-git branch branch_name
-```
+	```sh
+	git remote add <alias> <git_url>
+	```
 
-To switch to the new branch, you would use.
+	**By default alias is "origin"**
 
-```
-git checkout branch_name
-```
+- View all remote connections
 
-Alternatively, you can create and switch to a new branch in one command
+	```sh
+	git remote -v
+	```
 
-```
-git checkout -b branch_name
-```
+- Remove connection
 
-#### 5.2 List branches
+	```sh
+	git remote remove <alias>
+	```
 
-This command lists all the branches in your repository.
+- Rename the alias
 
-```
-git branch
-```
+	```sh
+	git remote rename <old_name> <new_name>
+	```
 
-#### 5.3 Delete a branch
+- Fetch only branch from remote repo (not merge)
 
-This command deletes the specified branch.
+	```sh
+	git fetch <alias> <branch>
+	```
 
-```
-git branch -d branch_name
-```
+	**By default "git fecth" fetch from all branch**
 
-If the branch contains changes that are not merged, you might need to force the deletion using -D.
+- Fetch + merge from current branch use
 
-```
-git branch -D branch_name
-```
+	```sh
+	git pull
+	```
 
-#### 5.4 Merge branches
+- Fetch + rebase from current branch use
 
-To integrate changes from one branch into another, you can use the git merge command. For example, to merge a branch into the current branch
-```
-git checkout <target_branch>
-```
-```
-git merge <source_branch>
-```
+	```sh
+	git pull --rebase
+	```
 
-#### 5.5 Rebase branches
+- Upload local repo from branch to remote repo
 
-Another way to integrate changes is through rebasing. It essentially moves or combines a sequence of commits to a new base commit.
+	```sh
+	git push <alias> <branch>
+	```
 
-```
-git checkout feature_branch
-```
-```
-git rebase main_branch
-```
-
-#### 5.6 Resolve conflict
-
-During branch merging or rebasing, conflicts might arise if changes conflict with each other. Use git mergetool or manually edit the conflicting files to resolve the conflicts.
-
-```
-git mergetool
-```
-
-#### 5.7 View commit history
-
-This command shows the commit history of the current branch.
-
-```
-git log
-```
-### 6. Git Extras
-
--   Git log and history exploration
--   Tagging releases
--   Ignoring files with `.gitignore`
-
-### Resources
-
--   [Git Documentation](https://git-scm.com/doc)
--   [GitHub Guides](https://guides.github.com/)
--   [Pro Git Book](https://git-scm.com/book/en/v2)
--   [Git Vitalization For Better Understanding](https://learngitbranching.js.org/)
+	**By default "git push" upload from current branch**
