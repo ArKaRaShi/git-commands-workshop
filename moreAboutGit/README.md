@@ -224,6 +224,7 @@ This section try to explain synchronizing local repo with remote repo.
 	```sh
 	git pull --rebase
 	```
+ssh-keygen -o -t rsa -C <"suteerawutchai@gmail.com">
 
 - Upload local repo from branch to remote repo
 
