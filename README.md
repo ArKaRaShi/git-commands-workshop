@@ -184,7 +184,7 @@ Branching <a name="branching"></a>
 	```
 
 > [!TIP]
-> **use `git checkout -f <branch_name>` for create + switch**
+> **use `git checkout -b <branch_name>` for create + switch**
 
 Merging <a name="merging"></a>
 -------
