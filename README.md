@@ -119,21 +119,39 @@ git status
 #### 4.6. Git commit
 
 This command commits the staged changes to the **local repository** along with a descriptive message "Initial commit". The -m flag is used to include a commit message directly from the command line.
-
+Let's try this command.
 ```
 git commit -m "Initial commit"
 ```
+Git will tell you to set config, include email and name.
+So you need to config git local so that githost knows you.
 
-#### 4.7. Git remote
+```sh
+git config --global user.email <"gmail">
+```
+```sh
+git config --global user.name <"git username">
+```
+
+#### 4.7. Git push
+The git push command is used to upload **local repository** content to a **remote repository**.
+Let's try this command.
 
 ```
-git remote add origin https://github.com/your-username/your-repository.git
+git push origin main
 ```
 
-#### 4.8. Git Token
+- If you use Linux/Mac, you need to use.
 
+	```sh
+	ssh-keygen -o -t rsa -C <"gmail">
+	```
 
-#### 4.10. Git push
+- Copy public key and pase in github.
+	
+	Open github -> Click profile github at top right -> **Settings** -> **SSH and GPG keys** -> **New SSH Key** -> Add **"Title"** box and paste public key in **"Key"** box -> **Add SSH key**
+	<!-- insert a picture for put key -->
+
 
 This command is used to push committed changes from the local repository to the remote repository. However, before pushing, it's necessary to set up a connection to a remote repository using git remote add and specifying the URL of the remote repository.
 
