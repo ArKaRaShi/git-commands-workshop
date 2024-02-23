@@ -32,6 +32,12 @@ Install <a name="install"></a>
 
 	[https://git-scm.com/downloads](https://git-scm.com/downloads)
 
+- Check version of git
+
+	```sh
+	git version
+	```
+
 Setup <a name="setup"></a>
 -----
 
