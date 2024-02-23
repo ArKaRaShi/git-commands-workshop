@@ -48,26 +48,23 @@ https://github.com/new
 
 ### 4. Git Basics
 
-#### 4.1. Git config
-git config --global user.email <email>
-git config --global user.name <gitusername>
-
-#### 4.2. Git init
+#### 4.1. Git init
 
 Initializes a new Git repository. If you want to place a project under revision control, this is the first command you need to learn.
 
-   ##### If in target folder
+##### If in target folder
+
 ```
 git init
 ```
 
-   ##### If want to create folder with git
+##### If want to create folder with git
 
 ```
 git init folder_name
 ```
 
-#### 4.3. Git status
+#### 4.2. Git status
 
 This command is used to check the current status of your Git repository. It shows which files are modified, which files are staged for commit, and which files are untracked. This step helps you understand the state of your repository before proceeding with further actions.
 
@@ -80,10 +77,14 @@ you can try this command to see some hidden folders for (mac user or linux).
 ```
 ls -la
 ```
+or 
+```
+ll
+```
 
-#### 4.4. Git add
+#### 4.3. Git add
 
-Before add let's create some new files
+Before use add command. Let's create some new files
 
 ```
 mkdir folder_name
@@ -108,21 +109,25 @@ Add Specific files.
 git add file1.txt file2.txt
 ```
 
-#### 4.5. Git status again
+#### 4.4. Git status again
 
-After adding changes to the staging area, it's a good practice to check the status again to ensure that all changes you intended to stage are properly staged and there are no untracked files left.
+After adding changes to the staging area, it's a good practice to check the status again to ensure that all changes you intended to stage are properly staged and there are no untracked files left.<br>
+You will see some green lines.
 
 ```
 git status
 ```
 
-#### 4.6. Git commit
+
+#### 4.5. Git commit
 
 This command commits the staged changes to the **local repository** along with a descriptive message "Initial commit". The -m flag is used to include a commit message directly from the command line.
 Let's try this command.
+
 ```
 git commit -m "Initial commit"
 ```
+
 Git will tell you to set config, include email and name.
 So you need to config git local so that githost knows you.
 
@@ -133,7 +138,9 @@ git config --global user.email <"gmail">
 git config --global user.name <"git username">
 ```
 
-#### 4.7. Git push
+Then try to commit again.
+
+#### 4.6. Git push
 The git push command is used to upload **local repository** content to a **remote repository**.
 Let's try this command.
 
@@ -141,16 +148,16 @@ Let's try this command.
 git push origin main
 ```
 
-- If you use Linux/Mac, you need to use.
+If you use Linux/Mac, you need to use.
 
-	```sh
-	ssh-keygen -o -t rsa -C <"gmail">
-	```
+```sh
+ssh-keygen -o -t rsa -C <"gmail">
+```
 
-- Copy public key and pase in github.
+Copy public key and paste in github.
 	
-	Open github -> Click profile github at top right -> **Settings** -> **SSH and GPG keys** -> **New SSH Key** -> Add **"Title"** box and paste public key in **"Key"** box -> **Add SSH key**
-	<!-- insert a picture for put key -->
+Open github -> Click profile github at top right -> **Settings** -> **SSH and GPG keys** -> **New SSH Key** -> Add **"Title"** box and paste public key in **"Key"** box -> **Add SSH key**
+<!-- insert a picture for put key -->
 
 
 This command is used to push committed changes from the local repository to the remote repository. However, before pushing, it's necessary to set up a connection to a remote repository using git remote add and specifying the URL of the remote repository.
@@ -159,7 +166,7 @@ This command is used to push committed changes from the local repository to the 
 git push origin main
 ```
 
-Push to the specific branch
+or push to the specific branch
 
 ```
 git push <remote> <branch>
