@@ -159,14 +159,7 @@ Copy public key and paste in github.
 Open github -> Click profile github at top right -> **Settings** -> **SSH and GPG keys** -> **New SSH Key** -> Add **"Title"** box and paste public key in **"Key"** box -> **Add SSH key**
 <!-- insert a picture for put key -->
 
-
-This command is used to push committed changes from the local repository to the remote repository. However, before pushing, it's necessary to set up a connection to a remote repository using git remote add and specifying the URL of the remote repository.
-
-```
-git push origin main
-```
-
-or push to the specific branch
+Then let's try to push again, or you can push to the specific branch.
 
 ```
 git push <remote> <branch>
